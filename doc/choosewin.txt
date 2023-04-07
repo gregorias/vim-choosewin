@@ -65,6 +65,14 @@ All config options in this section are set in 'autoload/choosewin/config.vim'.
 	Type: |Number|
 	Control whether the window label is shown in the |&statusline|.
 
+*g:choosewin_colorscheme_enable*
+	Default: 1
+	Type: |Number| 0 or 1
+	Control whether this plugin should setup its highlight groups.
+        If you set it to 0, you can use `choosewin.color.enable` to enable the
+        default highlight groups.
+
+
 *g:choosewin_color_label*
 	Default: See 'autoload/choosewin/config.vim'
 	Type: |Dictionary|
@@ -431,7 +439,7 @@ CHANGELOG						*choosewin-changelog*
 	- [improve] Rewrite, cleanup overall program.
 	- [enhance] add tab_close action with default keymap 'x'.
 2015-01-25:
-	- [enhance] now swap don't stay same window, original swap is now 
+	- [enhance] now swap don't stay same window, original swap is now
 	  swap_stay.
 2015-01-20: v1.5
 	- verup again because of document mistake.

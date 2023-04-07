@@ -55,7 +55,7 @@ function! s:cw.start(wins, ...) "{{{1
     call self.choose()
 
   catch /\v^(CHOSE \d+)$/
-    if self.conf['noop'] 
+    if self.conf['noop']
       let tab    = tabpagenr()
       let win    = str2nr(matchstr(v:exception, '\v^CHOSE \zs\d+'))
       if tab isnot self.src.tab
@@ -88,7 +88,6 @@ function! s:cw.start(wins, ...) "{{{1
 endfunction
 
 function! s:cw.init(wins, conf) "{{{1
-  call choosewin#color#init()
   let self.wins        = s:wins.set(a:wins)
   let self.conf        = extend(choosewin#config#get(), a:conf)
   let self.action      = choosewin#action#init(self)
@@ -96,6 +95,9 @@ function! s:cw.init(wins, conf) "{{{1
   let self.tab_options = {}
   let self.statusline  = {}
   let self.src         = {'win': winnr(), 'tab': tabpagenr()}
+  if self.conf.colorscheme_enable
+    lua require("choosewin.color").set()
+  endif
 endfunction
 
 function! s:cw.setup() "{{{1

@@ -9,12 +9,6 @@ let g:loaded_choosewin = 1
 let s:old_cpo = &cpo
 set cpo&vim
 
-" Main:
-augroup plugin-choosewin
-  autocmd!
-  autocmd ColorScheme,SessionLoadPost * call choosewin#color#refresh()
-augroup END
-
 " KeyMap:
 nnoremap <silent> <Plug>(choosewin)
       \ :<C-u>call choosewin#start(range(1, winnr('$')))<CR>

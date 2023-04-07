@@ -1,10 +1,8 @@
-[日本語はこちら](https://github.com/t9md/vim-choosewin/blob/master/README-JP.md)
-
-# Animated GIF
+# ChooseWin
 
 ![gif](https://raw.githubusercontent.com/t9md/t9md/1675510eaa1b789aeffbc49c1ae3b1e8e7dceabe/img/vim-choosewin.gif)
 
-# Navigate to the window you choose
+## Navigate to the window you choose
 
 This plugin aims to mimic tmux's `display-pane` feature, which enables you to choose a window interactively.
 
@@ -60,20 +58,20 @@ nmap - <Plug>(choosewin)
 
 ### Move around tabs, and choose windows
 
-First of all, open multiple windows and tabs.  
-Invoke choosewin by typing `-` in normal mode.  
-Then you can move around tabs by `]` and `[`, or you cand choose the target tab directly by typing the number labeled in the tabline.  
-After you chose a target tab, you can choose a target window by typing the letter which is labeled in the statusline and in the middle of each window (if you have enabled the overlay feature).  
+First of all, open multiple windows and tabs.
+Invoke choosewin by typing `-` in normal mode.
+Then you can move around tabs by `]` and `[`, or you cand choose the target tab directly by typing the number labeled in the tabline.
+After you chose a target tab, you can choose a target window by typing the letter which is labeled in the statusline and in the middle of each window (if you have enabled the overlay feature).
 
 ### Choose the previous window
 
-Type `-` again to invoke choosewin, then input `-` again to choose the previous window. The previous window you were on before you choose the current window.  
+Type `-` again to invoke choosewin, then input `-` again to choose the previous window. The previous window you were on before you choose the current window.
 
 ### Swap windows
 
-Type `-` to invoke choosewin, then type `s` to swap windows.  
-Then type the label of a window to swap content(=buffer) of that window with your current window.  
-After you chose, the current window's buffer is swapped with the buffer shown in the window you chose.  
+Type `-` to invoke choosewin, then type `s` to swap windows.
+Then type the label of a window to swap content(=buffer) of that window with your current window.
+After you chose, the current window's buffer is swapped with the buffer shown in the window you chose.
 By combining "swap" and "previous window" features, you can easily swap any window with the previous window like so: `-s-`, invoking choosewin itself(`-`) then entering swapping mode(`s`), then instructing choosewin to swap the target window with the previous(`-`) window. Congratulations!
 
 ### NERDTree open file
